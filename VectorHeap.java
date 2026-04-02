@@ -1,7 +1,16 @@
+/**
+ * Implementacion de una cola con prioridad utilizando un heap
+ * Juan Pablo Román Gomez
+ */
+
 import java.util.Vector;
 
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
     protected Vector<E> data;
+
+    /**
+     * constructor que inicializa el VectorHeap
+     */
 
     public VectorHeap() {
         data = new Vector<>();
@@ -21,6 +30,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
         }
         data.set(leaf, value);
     }
+
+    /**
+     * agrega un elemento al heap y lo posiciona segun su prioridad
+     */
 
     @Override
     public void add(E value) {
@@ -50,6 +63,11 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
             }
         }
     }
+
+    /**
+     * elimina y retorna el elemento con la prioridad mas alta
+     */
+
     @Override
     public E remove() {
         if (isEmpty()) return null;
